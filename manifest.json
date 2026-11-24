@@ -1,0 +1,10 @@
+{
+  "id": "seongdo-notebook",
+  "name": "Seongdo Notebook",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Keep a prayer, thanksgiving, evangelism-contact and daily McCheyne Bible reading notebook in your vault, with no internet or AI use.",
+  "author": "Myoungcheul Joo",
+  "authorUrl": "https://pkm-institute.netlify.app",
+  "isDesktopOnly": false
+}
