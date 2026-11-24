@@ -1,0 +1,60 @@
+/* 성도수첩 — 탭마다 차분한 색 하나를 쓰고, 둥근 카드와 넉넉한 여백으로 읽기 편하게 */
+.sd-view { --sd-accent: #6b7fd7; --sd-soft: color-mix(in srgb, var(--sd-accent) 12%, transparent); --sd-line: color-mix(in srgb, var(--sd-accent) 28%, var(--background-modifier-border)); padding: 14px 16px 32px; max-width: 640px; margin: 0 auto; }
+.sd-view.sd-t-기도 { --sd-accent: #6b7fd7; }
+.sd-view.sd-t-감사 { --sd-accent: #e0a030; }
+.sd-view.sd-t-전도 { --sd-accent: #3fa38a; }
+.sd-view.sd-t-성경읽기 { --sd-accent: #b46a8f; }
+
+/* 탭: 알약 모양 */
+.sd-tabs { display: flex; gap: 6px; margin-bottom: 14px; padding: 4px; background: var(--background-secondary); border-radius: 999px; }
+.sd-tabs button { flex: 1 1 0; white-space: nowrap; border: none; box-shadow: none; background: transparent; color: var(--text-muted); border-radius: 999px; padding: 6px 4px; font-size: var(--font-ui-small); }
+.sd-tabs button:hover { background: var(--sd-soft); }
+.sd-tabs button.is-active { background: var(--sd-accent); color: #fff; font-weight: 600; }
+.sd-view .sd-tabs + .sd-tabs { background: transparent; padding: 0; margin-top: -4px; }
+.sd-view .sd-tabs + .sd-tabs button { background: var(--sd-soft); }
+.sd-view .sd-tabs + .sd-tabs button.is-active { background: var(--sd-accent); }
+
+/* 머리 */
+.sd-head { display: flex; gap: 6px; align-items: center; margin: 4px 0 10px; flex-wrap: wrap; }
+.sd-head h3 { margin: 0 auto 0 0; font-size: var(--font-ui-large); }
+.sd-head h3::before { content: ""; display: inline-block; width: 4px; height: 1em; margin-right: 8px; vertical-align: -2px; border-radius: 2px; background: var(--sd-accent); }
+.sd-view h4 { margin: 18px 0 6px; color: var(--sd-accent); font-size: var(--font-ui-small); letter-spacing: .02em; }
+.sd-view button.mod-cta, .sd-head button { border-radius: 999px; }
+.sd-view button.mod-cta { background: var(--sd-accent); color: #fff; }
+
+/* 카드 */
+.sd-card { border: 1px solid var(--sd-line); border-left: 4px solid var(--sd-accent); border-radius: 12px; padding: 12px 14px; margin: 10px 0; background: var(--background-primary); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.sd-card .sd-title { font-weight: 600; font-size: var(--font-ui-medium); word-break: keep-all; }
+.sd-card.is-answered { border-left-color: #4caf7d; background: color-mix(in srgb, #4caf7d 8%, var(--background-primary)); }
+.sd-card.sd-thank { padding: 10px 14px; word-break: keep-all; }
+.sd-meta { color: var(--text-muted); font-size: var(--font-ui-smaller); margin-top: 3px; line-height: 1.5; word-break: keep-all; }
+.sd-actions { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.sd-actions button { white-space: nowrap; border-radius: 999px; font-size: var(--font-ui-smaller); }
+
+/* 입력 */
+.sd-input { width: 100%; margin: 4px 0 10px; border-radius: 10px; padding: 8px 10px; }
+
+/* 감사 진행 바 */
+.sd-progress { height: 8px; border-radius: 999px; background: var(--sd-soft); margin: 4px 0 6px; overflow: hidden; }
+.sd-progress-bar { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #f0c060, var(--sd-accent)); transition: width .3s; }
+
+.sd-empty { color: var(--text-muted); padding: 28px 8px; text-align: center; border: 1px dashed var(--sd-line); border-radius: 12px; margin: 10px 0; }
+
+/* 기도 모드 */
+.sd-pray { text-align: center; padding: 36px 16px; margin: 6px 0; border-radius: 16px; background: linear-gradient(160deg, var(--sd-soft), transparent); }
+.sd-pray .sd-big { font-size: 1.5em; font-weight: 700; line-height: 1.5; margin: 10px 0 14px; word-break: keep-all; }
+.sd-pray .sd-body { color: var(--text-muted); margin-bottom: 20px; white-space: pre-wrap; word-break: keep-all; line-height: 1.7; }
+.sd-pray button { padding: 8px 18px; border-radius: 999px; }
+
+/* 성경읽기 */
+.sd-read-row { display: flex; gap: 8px; align-items: center; margin: 8px 0; padding: 10px 12px; border: 1px solid var(--sd-line); border-radius: 12px; flex-wrap: wrap; }
+.sd-read-row button { white-space: nowrap; border-radius: 999px; background: var(--sd-soft); border: none; box-shadow: none; }
+.sd-foot { color: var(--text-muted); font-size: var(--font-ui-small); margin-top: 12px; text-align: center; line-height: 1.6; }
+
+/* 휴대폰: 누르기 쉽게 */
+.is-mobile .sd-view { padding: 10px 12px 28px; }
+.is-mobile .sd-view button { padding: 9px 16px; min-height: 40px; }
+.is-mobile .sd-tabs button { padding: 9px 2px; }
+.is-mobile .sd-read-row input[type=checkbox] { width: 22px; height: 22px; }
+
+.sd-credit { margin-top: 28px; text-align: center; color: var(--text-faint); font-size: var(--font-ui-smaller); letter-spacing: .02em; }
